@@ -59,3 +59,4 @@ function removeFromCart(productId) {
 function getProductFromCart(productId) {
   return fetchProduct(productId);
 }
+

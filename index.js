@@ -81,6 +81,7 @@ function displayProducts(products) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.innerHTML = `
+
     <img src="${product.image}" alt="${product.name}" onclick="viewProduct(${product.id})">
     <h3>${product.name}</h3>
     <div onclick="viewProduct(${product.id} class="category">Kategoriya: ${product.category}</div>
@@ -90,7 +91,7 @@ function displayProducts(products) {
         Reyting: ${product.star}
         <span class="stars">${"★".repeat(Math.round(product.star))}
         ${"☆".repeat(5 - Math.round(product.star))}</span>
-    <button class="btn" onclick="viewProduct(${product.id})">Tafsilotlar</button>
+    
     </div>
 `;
 
