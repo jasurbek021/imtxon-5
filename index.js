@@ -81,22 +81,19 @@ function displayProducts(products) {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <div class="category">Kategoriya: ${product.category}</div>
-            <div class="new-price">Yangi narxi: $${product.newPrice.toFixed(
-              2
-            )}</div>
-            <div class="old-price">Eski narxi: $${product.oldPrice.toFixed(
-              2
-            )}</div>
-            <div class="rating">
-                Reyting: ${product.star}
-                <span class="stars">${"★".repeat(Math.round(product.star))}
-                ${"☆".repeat(5 - Math.round(product.star))}</span>
-            </div>
-            <button class="btn" onclick="viewProduct(${product.id})">Tafsilotlar</button>
-        `;
+    <img src="${product.image}" alt="${product.name}" onclick="viewProduct(${product.id})">
+    <h3>${product.name}</h3>
+    <div onclick="viewProduct(${product.id} class="category">Kategoriya: ${product.category}</div>
+    <div  onclick="viewProduct(${product.id}class="new-price">Yangi narxi: $${product.newPrice.toFixed(2)}</div>
+    <div onclick="viewProduct(${product.id} class="old-price">Eski narxi: $${product.oldPrice.toFixed(2)}</div>
+    <div onclick="viewProduct(${product.id} class="rating">
+        Reyting: ${product.star}
+        <span class="stars">${"★".repeat(Math.round(product.star))}
+        ${"☆".repeat(5 - Math.round(product.star))}</span>
+    <button class="btn" onclick="viewProduct(${product.id})">Tafsilotlar</button>
+    </div>
+`;
+
     productsContainer.appendChild(productCard);
   });
 }

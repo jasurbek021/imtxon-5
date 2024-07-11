@@ -59,13 +59,62 @@ function displayProductDetail(product) {
   `;
 }
 
-function goToCart() {
-  window.location.href = "cart.html";
+function addToCart(productId) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(productId);
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Loaderni ko'rsatish
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
+
+  // Animatsiyani boshlash
+  const cartButton = document.querySelector('.btn-detail'); // Savatcha tugmasini topish
+  const originalText = cartButton.innerHTML; // Tugma matnini saqlash
+  cartButton.innerHTML = 'Mahsulot qo\'shilmoqda...'; // Yangi tugma matni
+
+  setTimeout(() => {
+    // Loader ni yopish
+    loader.style.display = 'none';
+
+    cartButton.innerHTML = originalText;
+  }, 1000); // Animatsiya 1 sekund davom etadi
 }
 
 function addToCart(productId) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(productId);
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Mahsulot savatchaga qo'shildi!");
+
+  // Loaderni ko'rsatish
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block';
+
+  // Animatsiyani boshlash
+  const cartButton = document.querySelector('.btn-detail'); // Savatcha tugmasini topish
+  const originalText = cartButton.innerHTML; // Tugma matnini saqlash
+  cartButton.innerHTML = 'Mahsulot qo\'shilmoqda...'; // Yangi tugma matni
+
+  setTimeout(() => {
+    // Loader ni yopish
+    loader.style.display = 'none';
+
+    // Asl matnga qaytish
+    cartButton.innerHTML = originalText;
+
+    // Kardga otish
+    window.location.href = "cart.html";
+  }, 1000); // Animatsiya 1 sekund davom etadi
 }
+
+
+setTimeout(() => {
+  // Loader ni yopish
+  loader.style.display = 'none';
+
+  // Asl matnga qaytish
+  cartButton.innerHTML = originalText;
+
+  // Kardga otish
+  window.location.href = "cart.html";
+}, 3000); // Animatsiya 3 sekund davom etadi
