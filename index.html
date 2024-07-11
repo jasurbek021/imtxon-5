@@ -34,12 +34,39 @@
         <a href="./cart.html"><img src="./img/savat.svg" alt="" /></a>
       </div>
     </header>
+    <div id="product-detail-container"></div>
+
     <main class="main">
       <div class="main-div">
-        <p>Главная /</p>
-        <p>Каталог</p>
+        <p class="item-main">Главная/</p>
+        <p class="item-main">Каталог</p>
       </div>
+      <h3 class="main-text" >Накладные электронные замки</h3>
     </main>
+    <div class="filter1">
+      <label for="price-filter">Нарх filtr:</label>
+      <select id="price-filter" onchange="filterProductsByPrice()">
+        <option value="0">Бarchasi</option>
+        <option value="50">43108 dan past</option>
+        <option value="100">10136 dan past</option>
+        <option value="200">49394 dan past</option>
+        <option value="500">16896 dan past</option>
+      </select>
+    </div>
+
+    <div class="filter2">
+      <label for="category-filter">Kategoriya:</label>
+      <select id="category-filter" onchange="filterProductsByCategory()">
+        <option value="0">Barchasi</option>
+        <option value="1">Известный</option>
+        <option value="2">Средний</option>
+        <option value="3">Не популярен</option>
+      </select>
+    </div>
+    
+
+    
+    
     <div id="products-container" class="product-grid"></div>
 
     <div class="register">
