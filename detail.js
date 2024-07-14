@@ -81,7 +81,7 @@ function addToCart(productId) {
   }, 1000); // Animatsiya 1 sekund davom etadi
 }
 
-function addToCart(productId) {
+
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(productId);
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -105,16 +105,5 @@ function addToCart(productId) {
     // Kardga otish
     window.location.href = "cart.html";
   }, 1000); // Animatsiya 1 sekund davom etadi
-}
 
 
-setTimeout(() => {
-  // Loader ni yopish
-  loader.style.display = 'none';
-
-  // Asl matnga qaytish
-  cartButton.innerHTML = originalText;
-
-  // Kardga otish
-  window.location.href = "cart.html";
-}, 3000); // Animatsiya 3 sekund davom etadi

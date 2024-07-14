@@ -15,13 +15,11 @@ function displayCartItems() {
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
-    <div class="cart-item-image">
       <img class="img" src="${product.image}" alt="${product.name}">
-      <div>
-        <h3>${product.name}</h3>
-        <div class="price">Narx: $${product.newPrice.toFixed(2)}</div>
-      </div>
-      <button onclick="removeFromCart(${product.id})">Olib tashlash</button>
+      <div class="img-container">
+        <h3  class="img-container">${product.name}</h3>
+        <div class="price img-container">Narx: $${product.newPrice.toFixed(2)}</div>
+      <button  class="img-container" onclick="removeFromCart(${product.id})">Olib tashlash</button>
       </div>
     `;
     cartContainer.appendChild(cartItem);
